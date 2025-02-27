@@ -14,8 +14,6 @@ import {HttpErrorResponse, provideHttpClient, withInterceptors} from '@angular/c
 
 
 export const host = 'https://djarviss.ru/rest/';
-export const hostRegistration = 'https://djarviss.ru/users-registration/';
-
 
 export const alert_error = (error: HttpErrorResponse) =>{
   alert(error.status + ' - ' + error.statusText + '\n' + error.error);
