@@ -1,0 +1,11 @@
+<button [disabled]="auth.user" (click)="auth.login()">Войти</button>
+<button [disabled]="!auth.user" (click)="auth.logout()">Выйти</button>
+@if (auth.user){
+  <div>{{auth.getUserName()}}</div>
+  <div>email: {{auth.user?.email}} {{auth.user?.emailVerified ? 'Подтверждён' : 'Не Подтверждён'}}</div>
+  <div>Телефон: {{auth.getAttribute('phone')}}</div>
+  <div>Отдел: {{auth.getAttribute('department')}}</div>
+  <div>Должность: {{auth.getAttribute('jobTitle')}}</div>
+}
+<button routerLink="/protected-all-authenticated">Разрешено всем авторизованным</button>
+<button routerLink="/protected-role">Разрешено авторизованным с ролью "demo"</button>
